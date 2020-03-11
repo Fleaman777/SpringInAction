@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="duke"
+          class="com.filippov.rm.common.Juggler">
+        <constructor-arg value="6"/>
+    </bean>
+
+    <bean id="sonnet29"
+          class="com.filippov.rm.common.Sonnet29">
+    </bean>
+
+    <bean id="duke2"
+          class="com.filippov.rm.common.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonnet29"/>
+    </bean>
+
+    <bean id="stage"
+          class="com.filippov.rm.common.Stage"
+          factory-method="getInstance"/>
+
+    <bean id="test"
+          class="com.filippov.rm.common.Test"
+          factory-method="getInstance"/>
+
+    <!--<bean id="test2"-->
+          <!--class="com.filippov.rm.common.Test"-->
+          <!--factory-method="getInstance"/>-->
+
+</beans>
