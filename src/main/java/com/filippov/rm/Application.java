@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("app-config.xml");
         Juggler juggler = (Juggler) applicationContext.getBean("duke");
@@ -18,7 +18,7 @@ public class Application {
 //        duke2.perform();
 
         Test test1 = (Test) applicationContext.getBean("test");
-//        Test test4 = (Test) applicationContext.getBean("test2");
+        Test test4 = (Test) applicationContext.getBean("test2");
 
         test1.printCount();
 //        test4.printCount();
