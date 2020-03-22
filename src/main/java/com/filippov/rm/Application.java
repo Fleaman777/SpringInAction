@@ -16,6 +16,7 @@ public class Application {
 //        Perfomer kenny = (Perfomer) applicationContext.getBean("kenny");
 //        Perfomer kenny2 = (Perfomer) applicationContext.getBean("kenny2");
         Perfomer henry = (Perfomer) applicationContext.getBean("Henry");
+        Perfomer copySong = (Perfomer) applicationContext.getBean("copySong");
 //        juggler.perform();
 //        duke2.perform();
 
@@ -26,6 +27,7 @@ public class Application {
 //        test4.printCount();
 //        kenny.perform();
 //        kenny2.perform();
-        henry.perform();
+//        henry.perform();
+        copySong.perform();
     }
 }

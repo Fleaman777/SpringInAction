@@ -62,6 +62,10 @@
         </property>
     </bean>
 
+    <bean id ="copySong"
+          class="com.filippov.rm.common.CopySong">
+        <property name="song" value="#{kenny2.song.toUpperCase() + '  oooo  ' +T(java.lang.Math).PI}"/>
+    </bean>
     <bean id="saxophone"
           class="com.filippov.rm.common.Saxophone"/>
 
