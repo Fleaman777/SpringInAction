@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 
     <bean id="duke"
@@ -75,5 +75,31 @@
     <bean id="guitar"
           class="com.filippov.rm.common.Guitar"/>
 
+
+    <bean id="cities"
+          class="com.filippov.rm.common.world.Cities">
+        <property name="citiesList" ref="citiesList"/>
+        <property name="specialCity" value="#{citiesList.^[population ge 6000000]}"/>
+        <property name="bigCities" value="#{citiesList.?[population ge 6000000]}"/>
+    </bean>
+
+    <util:list id="citiesList">
+        <bean class="com.filippov.rm.common.world.City"
+              p:country="Russia"
+              p:name="SPb"
+              p:population="6000000"/>
+        <bean class="com.filippov.rm.common.world.City"
+              p:country="Russia"
+              p:name="Moscow"
+              p:population="12000000"/>
+        <bean class="com.filippov.rm.common.world.City"
+              p:country="Russia"
+              p:name="Sosnovy-Bor"
+              p:population="60000"/>
+        <bean class="com.filippov.rm.common.world.City"
+              p:country="Russia"
+              p:name="Vyborg"
+              p:population="60000"/>
+    </util:list>
 
 </beans>
