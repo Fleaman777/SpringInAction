@@ -21,6 +21,8 @@ public class Application {
 //        juggler.perform();
 //        duke2.perform();
         Cities cities = (Cities) applicationContext.getBean("cities");
+        Perfomer saxophonist1 = (Perfomer) applicationContext.getBean("saxophonist1");
+        Perfomer saxophonist2 = (Perfomer) applicationContext.getBean("saxophonist2");
 
         Test test1 = (Test) applicationContext.getBean("test");
 //        Test test4 = (Test) applicationContext.getBean("test2");
@@ -34,6 +36,8 @@ public class Application {
 
 //        System.out.println(cities.getCitiesList());
 //        cities.getBigCities();
-        cities.getSpecialCity();
+//        cities.getSpecialCity();
+        saxophonist1.perform();
+        saxophonist2.perform();
     }
 }

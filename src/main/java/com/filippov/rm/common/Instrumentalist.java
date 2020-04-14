@@ -9,6 +9,7 @@ public class Instrumentalist implements Perfomer {
     public void perform() {
         System.out.println("Start play music");
         instrument.play();
+        System.out.println(song + "Song");
     }
 
     public String getSong() {

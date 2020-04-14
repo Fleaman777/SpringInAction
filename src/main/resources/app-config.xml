@@ -66,6 +66,22 @@
           class="com.filippov.rm.common.CopySong">
         <property name="song" value="#{kenny2.song.toUpperCase() + '  oooo  ' +T(java.lang.Math).PI}"/>
     </bean>
+
+    <bean id="commonInstrumentalist"
+          class="com.filippov.rm.common.Instrumentalist"
+          abstract="true">
+        <property name="instrument" ref="saxophone"/>
+        <property name="song" value="Bla bla"/>
+    </bean>
+
+    <!--<bean id="commonProperty" abstract="true">-->
+        <!--<property name="additionalSong" value="aaa aaa"/>-->
+    <!--</bean>-->
+
+    <bean id="saxophonist1" parent="commonInstrumentalist"/>
+    <bean id="saxophonist2" parent="commonInstrumentalist"/>
+
+
     <bean id="saxophone"
           class="com.filippov.rm.common.Saxophone"/>
 
