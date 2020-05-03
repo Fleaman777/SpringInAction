@@ -1,4 +1,4 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.interfaces;
 
 public interface Perfomer {
     void perform();

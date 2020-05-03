@@ -1,4 +1,6 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.perfomers;
+
+import com.filippov.rm.common.interfaces.Perfomer;
 
 public class Juggler implements Perfomer {
 

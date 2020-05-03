@@ -1,7 +1,7 @@
 package com.filippov.rm;
 
-import com.filippov.rm.common.Juggler;
-import com.filippov.rm.common.Perfomer;
+import com.filippov.rm.common.perfomers.Juggler;
+import com.filippov.rm.common.interfaces.Perfomer;
 import com.filippov.rm.common.Test;
 import com.filippov.rm.common.dynamicchanges.StandUpComic;
 import com.filippov.rm.common.world.Cities;

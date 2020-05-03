@@ -1,4 +1,7 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.perfomers;
+
+import com.filippov.rm.common.interfaces.Poem;
+import com.filippov.rm.common.perfomers.Juggler;
 
 public class PoeticJuggler extends Juggler {
 

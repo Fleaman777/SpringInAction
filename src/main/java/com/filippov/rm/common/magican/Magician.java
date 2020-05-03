@@ -1,6 +1,6 @@
 package com.filippov.rm.common.magican;
 
-import com.filippov.rm.common.Perfomer;
+import com.filippov.rm.common.interfaces.Perfomer;
 
 public class Magician implements Perfomer {
 

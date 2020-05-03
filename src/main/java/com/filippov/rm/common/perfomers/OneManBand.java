@@ -1,7 +1,8 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.perfomers;
 
-import java.util.Collection;
-import java.util.Map;
+import com.filippov.rm.common.interfaces.Perfomer;
+import com.filippov.rm.common.magican.Instrument;
+
 import java.util.Set;
 
 public class OneManBand implements Perfomer {

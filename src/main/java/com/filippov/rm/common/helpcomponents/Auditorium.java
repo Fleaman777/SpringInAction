@@ -1,4 +1,4 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.helpcomponents;
 
 public class Auditorium {
 

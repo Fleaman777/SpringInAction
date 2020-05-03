@@ -1,4 +1,6 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.helpcomponents;
+
+import com.filippov.rm.common.interfaces.Poem;
 
 public class Sonnet29 implements Poem {
 

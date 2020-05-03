@@ -12,22 +12,22 @@
        http://www.springframework.org/schema/lang/spring-lang-2.0.xsd">
 
     <bean id="duke"
-          class="com.filippov.rm.common.Juggler">
+          class="com.filippov.rm.common.perfomers.Juggler">
         <constructor-arg value="6"/>
     </bean>
 
     <bean id="sonnet29"
-          class="com.filippov.rm.common.Sonnet29">
+          class="com.filippov.rm.common.helpcomponents.Sonnet29">
     </bean>
 
     <bean id="duke2"
-          class="com.filippov.rm.common.PoeticJuggler">
+          class="com.filippov.rm.common.perfomers.PoeticJuggler">
         <constructor-arg value="15"/>
         <constructor-arg ref="sonnet29"/>
     </bean>
 
     <bean id="stage"
-          class="com.filippov.rm.common.Stage"
+          class="com.filippov.rm.common.helpcomponents.Stage"
           factory-method="getInstance"/>
 
     <bean id="test"
@@ -39,24 +39,24 @@
     <!--factory-method="getInstance"/>-->
 
     <bean id="duditorium"
-          class="com.filippov.rm.common.Auditorium"/>
+          class="com.filippov.rm.common.helpcomponents.Auditorium"/>
 
 
     <bean id="kenny"
-          class="com.filippov.rm.common.Instrumentalist">
+          class="com.filippov.rm.common.perfomers.Instrumentalist">
         <property name="song" value="Znaish li ty"/>
         <property name="instrument">
-            <bean class="com.filippov.rm.common.Saxophone"/>
+            <bean class="com.filippov.rm.common.helpcomponents.Saxophone"/>
         </property>
     </bean>
 
     <bean id="kenny2"
-          class="com.filippov.rm.common.Instrumentalist"
+          class="com.filippov.rm.common.perfomers.Instrumentalist"
           p:song="Kakay nezhnost"
           p:instrument-ref="saxophone"/>
 
     <bean id="Henry"
-          class="com.filippov.rm.common.OneManBand">
+          class="com.filippov.rm.common.perfomers.OneManBand">
         <property name="instruments">
             <set>
                 <ref bean="guitar"/>
@@ -81,18 +81,18 @@
 
 
     <bean id="copySong"
-          class="com.filippov.rm.common.CopySong">
+          class="com.filippov.rm.common.perfomers.CopySong">
         <property name="song" value="#{kenny2.song.toUpperCase() + '  oooo  ' +T(java.lang.Math).PI}"/>
     </bean>
 
     <bean id="commonInstrumentalist"
-          class="com.filippov.rm.common.Instrumentalist"
+          class="com.filippov.rm.common.perfomers.Instrumentalist"
           abstract="true">
         <property name="instrument" ref="saxophone"/>
         <property name="song" value="Bla bla"/>
     </bean>
 
-    <bean id="LookUpBoy" class="com.filippov.rm.common.Instrumentalist">
+    <bean id="LookUpBoy" class="com.filippov.rm.common.perfomers.Instrumentalist">
         <property name="song" value="kroshka moy"/>
         <lookup-method name="getInstrument" bean="piano"/>
 
@@ -107,13 +107,13 @@
 
 
     <bean id="saxophone"
-          class="com.filippov.rm.common.Saxophone"/>
+          class="com.filippov.rm.common.helpcomponents.Saxophone"/>
 
     <bean id="piano"
-          class="com.filippov.rm.common.Piano"/>
+          class="com.filippov.rm.common.helpcomponents.Piano"/>
 
     <bean id="guitar"
-          class="com.filippov.rm.common.Guitar"/>
+          class="com.filippov.rm.common.helpcomponents.Guitar"/>
 
 
     <bean id="cities"

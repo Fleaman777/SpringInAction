@@ -1,11 +1,9 @@
-package com.filippov.rm.common;
+package com.filippov.rm.common.perfomers;
 
-import org.graalvm.compiler.core.common.Fields;
-import org.springframework.context.ApplicationListener;
+import com.filippov.rm.common.interfaces.Perfomer;
+import com.filippov.rm.common.magican.Instrument;
 
-import java.lang.reflect.Field;
-
-public class Instrumentalist implements Perfomer{
+public class Instrumentalist implements Perfomer {
 
     private String song;
     private Instrument instrument;
