@@ -1,6 +1,11 @@
 package com.filippov.rm.common;
 
-public class Instrumentalist implements Perfomer {
+import org.graalvm.compiler.core.common.Fields;
+import org.springframework.context.ApplicationListener;
+
+import java.lang.reflect.Field;
+
+public class Instrumentalist implements Perfomer{
 
     private String song;
     private Instrument instrument;
@@ -8,8 +13,14 @@ public class Instrumentalist implements Perfomer {
     @Override
     public void perform() {
         System.out.println("Start play music");
-        instrument.play();
+        getInstrument().play();
         System.out.println(song + "Song");
+
+
+        String s = new String("123");
+
+
+
     }
 
     public String getSong() {

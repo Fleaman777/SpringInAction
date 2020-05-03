@@ -3,6 +3,7 @@ package com.filippov.rm;
 import com.filippov.rm.common.Juggler;
 import com.filippov.rm.common.Perfomer;
 import com.filippov.rm.common.Test;
+import com.filippov.rm.common.dynamicchanges.StandUpComic;
 import com.filippov.rm.common.world.Cities;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,6 +24,9 @@ public class Application {
         Cities cities = (Cities) applicationContext.getBean("cities");
         Perfomer saxophonist1 = (Perfomer) applicationContext.getBean("saxophonist1");
         Perfomer saxophonist2 = (Perfomer) applicationContext.getBean("saxophonist2");
+        Perfomer harry = (Perfomer) applicationContext.getBean("Harry");
+        Perfomer lookUpBoy = (Perfomer) applicationContext.getBean("LookUpBoy");
+        StandUpComic standuper = (StandUpComic) applicationContext.getBean("standuper");
 
         Test test1 = (Test) applicationContext.getBean("test");
 //        Test test4 = (Test) applicationContext.getBean("test2");
@@ -37,7 +41,12 @@ public class Application {
 //        System.out.println(cities.getCitiesList());
 //        cities.getBigCities();
 //        cities.getSpecialCity();
-        saxophonist1.perform();
-        saxophonist2.perform();
+//        saxophonist1.perform();
+//        saxophonist2.perform();
+
+//        harry.perform();
+//        lookUpBoy.perform();
+        standuper.talkStrory();
+
     }
 }
