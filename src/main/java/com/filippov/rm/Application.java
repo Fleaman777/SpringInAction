@@ -5,7 +5,6 @@ import com.filippov.rm.common.interfaces.Perfomer;
 import com.filippov.rm.common.Test;
 import com.filippov.rm.common.dynamicchanges.StandUpComic;
 import com.filippov.rm.common.world.Cities;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -29,7 +28,9 @@ public class Application {
         Perfomer harry = (Perfomer) applicationContext.getBean("Harry");
         Perfomer lookUpBoy = (Perfomer) applicationContext.getBean("LookUpBoy");
         StandUpComic standuper = (StandUpComic) applicationContext.getBean("standuper");
-        Perfomer autowiredPerfomer = (Perfomer)applicationContext.getBean("autowiredPerfomer");
+        Perfomer autowiredPerfomer = (Perfomer) applicationContext.getBean("autowiredPerfomer");
+        Perfomer componentAnnPerformer = (Perfomer) applicationContext.getBean("componentAnnotationPerformer");
+        Perfomer poeticJuggler2 = (Perfomer) applicationContext.getBean("jugglerPoetic2");
 
         Test test1 = (Test) applicationContext.getBean("test");
 //        Test test4 = (Test) applicationContext.getBean("test2");
@@ -50,7 +51,8 @@ public class Application {
 //        harry.perform();
 //        lookUpBoy.perform();
 //        standuper.talkStrory();
-        autowiredPerfomer.perform();
-
+//        autowiredPerfomer.perform();
+//        componentAnnPerformer.perform();
+        poeticJuggler2.perform();
     }
 }
