@@ -5,12 +5,16 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:lang="http://www.springframework.org/schema/lang"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/lang
-       http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <context:annotation-config/>
     <context:component-scan base-package="com.filippov.rm"/>
@@ -84,10 +88,10 @@
     <bean id="tigerFromBox" class="com.filippov.rm.common.magican.TigerFromBox"/>
 
 
-    <bean id="copySong"
-          class="com.filippov.rm.common.perfomers.CopySong">
-        <property name="song" value="#{kenny2.song.toUpperCase() + '  oooo  ' +T(java.lang.Math).PI}"/>
-    </bean>
+    <!--<bean id="copySong"-->
+    <!--class="com.filippov.rm.common.perfomers.CopySong">-->
+    <!--<property name="song" value="#{kenny2.song.toUpperCase() + '  oooo  ' +T(java.lang.Math).PI}"/>-->
+    <!--</bean>-->
 
     <bean id="commonInstrumentalist"
           class="com.filippov.rm.common.perfomers.Instrumentalist"
@@ -169,12 +173,44 @@
 
     <bean id="autowiredPerfomer" class="com.filippov.rm.common.perfomers.AutoWiredPerfomance"/>
     <!--<bean class="com.filippov.rm.common.helpcomponents.NewInstrument">-->
-        <!--<qualifier value="newInstrument"/>-->
+    <!--<qualifier value="newInstrument"/>-->
     <!--</bean>-->
     <!--<bean class="com.filippov.rm.common.helpcomponents.NewInstrument2">-->
-        <!--<qualifier value="newInstrument"/>-->
+    <!--<qualifier value="newInstrument"/>-->
     <!--</bean>-->
     <!--<bean id="story" class="com.filippov.rm.common.dynamicchanges.com.filippov.rm.common.dynamicchanges.Story2.groovy"/>-->
 
+    <bean id="audience" class="com.filippov.rm.common.helpcomponents.Audience"/>
+
+    <aop:config>
+        <aop:pointcut id="perform" expression="execution(* com.filippov.rm.common.interfaces.Perfomer.perform(..))"/>
+        <aop:aspect id="audience" ref="audience">
+            <aop:before method="switchOffPhone"
+                        pointcut="execution(* com.filippov.rm.common.interfaces.Perfomer.perform())"/>
+            <aop:after method="applaus" pointcut="execution(* com.filippov.rm.common.interfaces.Perfomer.perform())"/>
+            <aop:after-throwing method="throwPomodoro"
+                                pointcut="execution(* com.filippov.rm.common.interfaces.Perfomer.perform())"/>
+            <aop:around method="countActionsTime" pointcut-ref="perform"/>
+        </aop:aspect>
+
+
+        <!--<aop:aspect id="catchThinkAspect" ref="thinkReader">-->
+            <!--<aop:pointcut id="think"-->
+                          <!--expression="execution(* com.filippov.rm.common.helpcomponents.Thinker.thinkAbout(*))"/>-->
+            <!--<aop:around method="yourIdeaTwo" pointcut-ref="think"/>-->
+        <!--</aop:aspect>-->
+
+
+        <aop:aspect id="catchThinkAspect" ref="thinkReader">
+        <aop:pointcut id="think" expression="execution(* com.filippov.rm.common.helpcomponents.Thinker.thinkAbout(String))
+        and args(mean)"/>
+        <aop:before method="yourIdea" pointcut-ref="think" arg-names="mean"/>
+        </aop:aspect>
+
+    </aop:config>
+
+
+    <!--<bean id="thinker2" class="com.filippov.rm.common.helpcomponents.Thinker"/>-->
+    <!--<bean id="thinkReader" class="com.filippov.rm.common.magican.ThinkReader"/>-->
 
 </beans>
