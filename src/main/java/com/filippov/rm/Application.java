@@ -1,6 +1,7 @@
 package com.filippov.rm;
 
 import com.filippov.rm.common.helpcomponents.Thinker;
+import com.filippov.rm.common.interfaces.AdditionalAction;
 import com.filippov.rm.common.perfomers.Juggler;
 import com.filippov.rm.common.interfaces.Perfomer;
 import com.filippov.rm.common.Test;
@@ -51,12 +52,16 @@ public class Application {
 //        saxophonist2.perform();
 
 //        harry.perform();
-//        lookUpBoy.perform();
+        lookUpBoy.perform();
+        if (lookUpBoy instanceof AdditionalAction) {
+            AdditionalAction additionalAction = (AdditionalAction) lookUpBoy;
+            additionalAction.performAdditionalAction();
+        }
 //        standuper.talkStrory();
 //        autowiredPerfomer.perform();
 //        componentAnnPerformer.perform();
 //        poeticJuggler2.perform();
 //
-        thinker.thinkAbout("animals");
+//        thinker.thinkAbout("animals");
     }
 }
