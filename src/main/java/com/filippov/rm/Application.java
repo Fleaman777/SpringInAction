@@ -33,7 +33,7 @@ public class Application {
         Perfomer autowiredPerfomer = (Perfomer) applicationContext.getBean("autowiredPerfomer");
         Perfomer componentAnnPerformer = (Perfomer) applicationContext.getBean("componentAnnotationPerformer");
         Perfomer poeticJuggler2 = (Perfomer) applicationContext.getBean("jugglerPoetic2");
-        Thinker thinker = (Thinker) applicationContext.getBean("thinker2");
+        Thinker thinker = (Thinker) applicationContext.getBean("thinker");
 
         Test test1 = (Test) applicationContext.getBean("test");
 //        Test test4 = (Test) applicationContext.getBean("test2");
@@ -52,16 +52,16 @@ public class Application {
 //        saxophonist2.perform();
 
 //        harry.perform();
-        lookUpBoy.perform();
-        if (lookUpBoy instanceof AdditionalAction) {
-            AdditionalAction additionalAction = (AdditionalAction) lookUpBoy;
-            additionalAction.performAdditionalAction();
-        }
+//        lookUpBoy.perform();
+//        if (lookUpBoy instanceof AdditionalAction) {
+//            AdditionalAction additionalAction = (AdditionalAction) lookUpBoy;
+//            additionalAction.performAdditionalAction();
+//        }
 //        standuper.talkStrory();
 //        autowiredPerfomer.perform();
 //        componentAnnPerformer.perform();
 //        poeticJuggler2.perform();
 //
-//        thinker.thinkAbout("animals");
+        thinker.thinkAbout("animals", poeticJuggler2);
     }
 }

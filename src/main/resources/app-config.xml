@@ -184,8 +184,8 @@
 
     <aop:config>
         <aop:pointcut id="perform" expression="execution(* com.filippov.rm.common.interfaces.Perfomer.perform(..))"/>
-        <aop:pointcut id="think" expression="execution(* com.filippov.rm.common.helpcomponents.Thinker.thinkAbout(String))
-        and args(mean)"/>
+        <!--<aop:pointcut id="think" expression="execution(* com.filippov.rm.common.helpcomponents.Thinker.thinkAbout(String))-->
+        <!--and args(mean)"/>-->
 
         <!--<aop:aspect id="audience" ref="audience">-->
         <!--<aop:before method="switchOffPhone"-->
@@ -209,12 +209,12 @@
         <!--</aop:aspect>-->
 
 
-        <aop:aspect id="catchThinkAspect" ref="thinkReader">
-            <aop:before method="yourIdea" pointcut-ref="think" arg-names="mean"/>
-        </aop:aspect>
-
+        <!--<aop:aspect id="catchThinkAspect" ref="thinkReader">-->
+            <!--<aop:before method="yourIdea" pointcut-ref="think" arg-names="mean"/>-->
+        <!--</aop:aspect>-->
     </aop:config>
 
+    <aop:aspectj-autoproxy/>
 
     <!--<bean id="thinker2" class="com.filippov.rm.common.helpcomponents.Thinker"/>-->
     <!--<bean id="thinkReader" class="com.filippov.rm.common.magican.ThinkReader"/>-->
