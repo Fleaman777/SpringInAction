@@ -1,5 +1,6 @@
 package com.filippov.rm.common.helpcomponents;
 
+import com.filippov.rm.common.interfaces.AdditionalAction;
 import com.filippov.rm.common.interfaces.Perfomer;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -9,25 +10,31 @@ import org.springframework.stereotype.Component;
 @Component
 public class TechnicalPersonal {
 
+    @DeclareParents(value = "com.filippov.rm.common.interfaces.Perfomer+",
+                    defaultImpl = AdditionalActionForPerformer.class)
+    private AdditionalAction additionalAction;
+
+
     @Pointcut(value = "execution(* com.filippov.rm.common.interfaces.Perfomer.perform())")
-    public void perform(){}
+    private void perform() {
+    }
 
     @Pointcut(value = "execution(* com.filippov.rm.common.helpcomponents.Thinker.thinkAbout(String, com.filippov.rm.common.interfaces.Perfomer)) && args(mean, perfomer)")
-    public void yourIdea(String mean, Perfomer perfomer){}
+    public void yourIdea(String mean, Perfomer perfomer) {
+    }
 
     @Before("perform()")
-    public void enabledLight(){
+    public void enabledLight() {
         System.out.println("Light is switched on");
     }
 
     @After("perform()")
-    public void disabledLight(){
+    public void disabledLight() {
         System.out.println("The light is off");
     }
 
-
     @Around("perform()")
-    public String switchedAudio(ProceedingJoinPoint joinPoint){
+    public String switchedAudio(ProceedingJoinPoint joinPoint) {
         System.out.println("The audio is on");
 
         try {

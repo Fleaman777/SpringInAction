@@ -53,15 +53,15 @@ public class Application {
 
 //        harry.perform();
 //        lookUpBoy.perform();
-//        if (lookUpBoy instanceof AdditionalAction) {
-//            AdditionalAction additionalAction = (AdditionalAction) lookUpBoy;
-//            additionalAction.performAdditionalAction();
-//        }
+        if (lookUpBoy instanceof AdditionalAction) {
+            AdditionalAction additionalAction = (AdditionalAction) lookUpBoy;
+            additionalAction.performAdditionalAction();
+        }
 //        standuper.talkStrory();
 //        autowiredPerfomer.perform();
 //        componentAnnPerformer.perform();
 //        poeticJuggler2.perform();
 //
-        thinker.thinkAbout("animals", poeticJuggler2);
+//        thinker.thinkAbout("animals", poeticJuggler2);
     }
 }

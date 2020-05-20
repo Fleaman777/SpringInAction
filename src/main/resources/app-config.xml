@@ -196,11 +196,11 @@
         <!--<aop:around method="countActionsTime" pointcut-ref="perform"/>-->
         <!--</aop:aspect>-->
 
-        <aop:aspect>
-            <aop:declare-parents types-matching="com.filippov.rm.common.interfaces.Perfomer+"
-                                 implement-interface="com.filippov.rm.common.interfaces.AdditionalAction"
-                                 delegate-ref="additionalActionForPerformer"/>
-        </aop:aspect>
+        <!--<aop:aspect>-->
+            <!--<aop:declare-parents types-matching="com.filippov.rm.common.interfaces.Perfomer+"-->
+                                 <!--implement-interface="com.filippov.rm.common.interfaces.AdditionalAction"-->
+                                 <!--delegate-ref="additionalActionForPerformer"/>-->
+        <!--</aop:aspect>-->
 
         <!--<aop:aspect id="catchThinkAspect" ref="thinkReader">-->
         <!--<aop:pointcut id="think"-->
